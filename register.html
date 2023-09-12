@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forml</title>
+    <link rel="text/css" href="css/form.css">
+    <style>body {background-color: powderblue;} </style>
+</head>
+<body>
+
+    <script>
+        function  myfun() {
+           var a = document.myform.email.value;
+           if(a.indexOf('@')<=0){
+            document.getElementById("message").innerHTML="**invalid @ position";
+            return false
+           }
+           if((a.charA(a.length-4)!='.')&&(a.charA(a.length-3)!='.'))
+           document.getElementById("message").innerHTML="**invalide posstion";
+           return false;
+           
+        }
+
+        function  myfun() {
+          var a =document.getElementById("password").value;
+          var b =document.getElementById("passwordd").value;
+          if(a==""){
+            document.getElementById("messagee").innerHTML="empty not";
+            return false;
+          }
+
+          if(a.length<5){
+            document.getElementById("messagee").innerHTML="more number eneter";
+            return false;
+          }
+          if(a.length>25){
+            document.getElementById("messagee").innerHTML="more than ";
+            return false;
+          }
+
+
+        
+          if(a!=b){
+            document.getElementById("messagee").innerHTML="not equal to ...";
+            return false;
+          }
+
+
+
+        }
+    </script>
+    <center>
+        
+        <form name="myform" onsubmit="return myfun()">
+<fieldset>
+    <legend>
+        <h1> student reg</h1>
+    </legend>
+            <div>
+                Name:<input type="text"> 
+
+            </div><br>
+
+           <div>
+            father name :<input type="text"><br><BR>
+           </div><br>
+<div>
+    mother name :<input type="text"><br><br>
+           </div><br>
+           
+           <div>
+            phone no :<input type="text"><br><br>
+
+           </div><br>
+           
+           <div>
+            Email:<input type="email" name="my email">
+            <span id="message"> </span><br>
+
+           </div><br>
+           <div>
+            gender male:<input type="radio" name="my gender">
+            male:<input type="radio" name="my gender">
+            other :<input type="radio" name="my gender">
+
+           </div><br>
+           <div>
+            dae of birth:<input type="date">
+
+           </div><br>
+           <div>
+            address:<input type="text">
+
+           </div><br>
+           <div>
+            blood group:
+            <select name="drop-down">
+                <option value="a">a</option>
+                <option value="a+">a+</option>
+                <option value="b">b</option>
+                <option value="b+">b+</option>
+            </select>
+           </div><br>
+           <div>
+            deparment it<input type="radio" name="my">
+            computer<input type="radio" name="my">
+
+           </div><br>
+           <div>
+            cource
+            java:<input type="checkbox">
+            c:<input type="checkbox">
+            python:<input type="checkbox">
+            javascript:<input type="checkbox">
+           </div><br>
+           <div>
+            photo<input type="file">
+<div>
+    pasword:<input type="passwords" id="password" value="">
+    <span id="message" style="color: red;"> </span><br><br>
+    </div>
+        <div>
+            confirm pass:<input type="passwords" id="passwordd" value="">
+    <span id="messagee"style="color: red;"> </span><br><br>
+
+            </div>    
+
+           </div><br>
+           <div>
+            <input type="submit" value="submit">
+
+           </div><br>
+           <div>
+            <input type="reset" value="reset">
+           </div>
+           
+</fieldset>
+        </form>
+    </center>
+    
+    
+</body>
+</html>
